@@ -1,0 +1,28 @@
+<div class="Watchlist">
+        Watchlist <br/>
+        {{watchlistCount}}
+    
+</div>
+
+
+<hr/>
+<div *ngFor="let c of allCourse">
+    <table>
+        <tr>
+            <td> <img src="/assets/images/{{c.imageName}}" alt="Java course image" width="120px" height="150px"> </td>
+            <td> 
+                <h2>{{c.courseName}} </h2>
+                <p> {{c.about}} </p>
+                <hr/>
+                Course Price {{150}}$ <br/>
+                Course Duration {{c.duration}} Days , @ 8 hrs in a Day
+                <hr/>
+                <button value="{{c.courseId}}" (click)="goForBuy(course.value)" #course> Enroll Course </button>
+                <button value="{{c.courseId}}" (click)="addWatchlist(course.value)" #course> Add to Watchlist </button>
+                    
+                
+            </td>
+            
+        </tr>
+    </table>
+</div>

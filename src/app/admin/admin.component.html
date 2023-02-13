@@ -1,0 +1,33 @@
+<p>admin works!</p>
+Name from Object <i> {{abc.name}}  </i>
+<hr/>
+
+<br/>
+
+
+    <table style="width: 100%;" *ngFor="let c of allCourse">
+        <caption> <p class="ribbon"> {{c.courseName}}</p> </caption>
+        <tr style="width: 100%;">
+            <td class="mycell"> Course Id </td>
+            <td class="mycell2"> {{c.courseId}} </td>
+        </tr>
+        <tr style="width: 100%;">
+            <td class="mycell"> Course Duration </td>
+            <td class="mycell2"> {{c.duration}} </td>
+        </tr>
+        <tr style="width: 100%;">
+            <td class="mycell"> Course Category </td>
+            <td class="mycell2"> {{c.category}} </td>
+        </tr>
+        <tr style="width: 100%;">
+            <td class="mycell"> Course Owner/Email </td>
+            <td class="mycell2"> {{c.courseOwner}} / {{c.courseOwner}}@gmail.com </td>
+        </tr>
+
+    </table>
+
+    
+    
+
+
+
