@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CourseOperationsService } from '../course-operations.service';
+
 interface Course
 {
    courseId:number,
@@ -8,7 +10,9 @@ interface Course
    category:string,
    courseOwner:string,
    imageName:string,
-   about:string
+   about:string,
+   discount:number;
+   price:number;
 }
 
 // decorators
@@ -26,8 +30,16 @@ export class MainAreaComponent {
   allCourse : Array<Course> = [];
   watchList : Array<Course> = [];
   watchlistCount:number=0 ;
-  constructor()
+
+  priceHighCss:string = "color:crimson";
+  priceLowCss:string = "color:rgb(8, 112, 63);font-weight: 700;";
+  priceNormalCSS:string = "color:black";
+  
+  __courseService:CourseOperationsService;
+  constructor(courseService:CourseOperationsService)
   {
+    this.__courseService = courseService;
+
     let c1 : Course = {
       "courseId":101,
       "courseName":"Java",
@@ -35,7 +47,9 @@ export class MainAreaComponent {
       "category":"Server Side Programming",
       "courseOwner":"Pooja",
       "imageName":"java course.JPG",
-      "about":"java is back end or business logic implementation OOPs specific language"
+      "about":"java is back end or business logic implementation OOPs specific language",
+      "discount":10,
+      "price":2000
     }
     let c2 : Course = {
       "courseId":102,
@@ -44,7 +58,9 @@ export class MainAreaComponent {
       "category":"Front End Programming",
       "courseOwner":"Pooja",
       "imageName":"angular.JPG",
-      "about":"Angulaer is front end business logic implementation language"
+      "about":"Angulaer is front end business logic implementation language",
+      "discount":0,
+      "price":300
     }
     let c3 : Course = {
       "courseId":103,
@@ -53,7 +69,9 @@ export class MainAreaComponent {
       "category":"Database Programming",
       "courseOwner":"Pooja",
       "imageName":"sqltraining.JPG",
-      "about":"SQL is Database generic language"
+      "about":"SQL is Database generic language",
+      "discount":25,
+      "price":80
     }
     let c4 : Course = {
       "courseId":104,
@@ -62,13 +80,23 @@ export class MainAreaComponent {
       "category":"Communication",
       "courseOwner":"Mahesh",
       "imageName":"english.JPG",
-      "about":"General Purpose Business Communication training"
+      "about":"General Purpose Business Communication training",
+      "discount":8,
+      "price":50
     }
 
+    
+
     this.allCourse = [c1,c2,c3,c4];
+    
 
   }
 
+  loadCourses()
+  {
+    newCourse:any = this.__courseService.getCourse();
+
+  }
   getData():string
   {
     return "good to buy at this price 2000";

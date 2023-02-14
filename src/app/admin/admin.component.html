@@ -26,8 +26,18 @@ Name from Object <i> {{abc.name}}  </i>
 
     </table>
 
-    
-    
+    <br/>
+    Demo for *ngIf <br/>
+
+    <div *ngIf="10<2;then inCaseofIf else inCaseofElse">
+    </div>
+    <ng-template #inCaseofIf>
+            if statements 
+    </ng-template>
+     <ng-template #inCaseofElse>
+        else statements
+    </ng-template>
+    <br/><br/><br/>
 
 
 
