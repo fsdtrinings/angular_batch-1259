@@ -1,0 +1,55 @@
+<table>
+    <tr>
+        <td> Enter  Course Id </td>
+        <td> <input type="text" #courseId/> </td>
+    </tr>
+    <tr>
+        <td> Enter  Course Name </td>
+        <td> <input type="text" #courseName/> </td>
+    </tr>
+    <tr>
+        <td> Duration </td>
+        <td> <input type="text" #duration/> </td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td> 
+            <select #category>
+                <option> Programming </option>
+                <option> AI </option>
+                <option> Communication </option>
+                <option> Database </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td> Couse Onwer Name </td>
+        <td> <input type="text" #onwer/> </td>
+    </tr>
+    <tr>
+        <td> Price </td>
+        <td> <input type="text" #price/> </td>
+    </tr>
+    <tr>
+        <td> Discount </td>
+        <td> <input type="text" #discount/> </td>
+    </tr>
+    <tr>
+        <td> Course Description </td>
+        <td> <input type="text" #about/> </td>
+    </tr>
+
+    <tr>
+        <td> Image Name </td>
+        <td> <input type="text" #image/> </td>
+    </tr>
+    <tr>
+        <td> <input type="reset" vaule="Clear All"></td>
+        <td> <input type="button" 
+            (click)="readCourse(courseId.value,courseName.value,duration.value,category.value,onwer.value,price.value,discount.value,about.value,image.value)"
+            value="Add Course" /> </td>
+    </tr>
+    
+
+</table>
+<br/>
