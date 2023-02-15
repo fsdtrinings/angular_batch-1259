@@ -1,0 +1,55 @@
+<table>
+    <tr>
+        <td> Enter  Course Id </td>
+        <td> <input type="text" value="101" #courseId/> </td>
+    </tr>
+    <tr>
+        <td> Enter  Course Name </td>
+        <td> <input type="text" value="java" #courseName/> </td>
+    </tr>
+    <tr>
+        <td> Duration </td>
+        <td> <input type="text" value="1234" #duration/> </td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td> 
+            <select #category>
+                <option> Programming </option>
+                <option> AI </option>
+                <option> Communication </option>
+                <option> Database </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td> Couse Onwer Name </td>
+        <td> <input type="text" value="abc" #onwer/> </td>
+    </tr>
+    <tr>
+        <td> Price </td>
+        <td> <input type="text" value="1456" #price/> </td>
+    </tr>
+    <tr>
+        <td> Discount </td>
+        <td> <input type="text" value="14" #discount/> </td>
+    </tr>
+    <tr>
+        <td> Course Description </td>
+        <td> <input type="text" value="jhvdvfjhadsba  eilfhiueaf efwejkfhwei hefjehfke esfwebfiuwea weffew" #about/> </td>
+    </tr>
+
+    <tr>
+        <td> Image Name </td>
+        <td> <input type="text" value="java course.JPG" #image/> </td>
+    </tr>
+    <tr>
+        <td> <input type="reset" vaule="Clear All"></td>
+        <td> <input type="button" 
+            (click)="readCourse(courseId.value,courseName.value,duration.value,category.value,onwer.value,price.value,discount.value,about.value,image.value)"
+            value="Add Course" /> </td>
+    </tr>
+    
+
+</table>
+<br/>
