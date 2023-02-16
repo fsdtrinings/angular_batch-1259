@@ -1,0 +1,86 @@
+
+<div style="margin-left: 15%;width: 25%; height: 100%; margin-bottom: 20%;">
+    <form (ngSubmit)="doFormSubmit()" #courseForm="ngForm">
+
+        <div class="form-group">
+
+            <label>Enter Course Id</label>
+            <input type="text" [(ngModel)]="c.courseId"  
+            class="form-control" id="cid" 
+             name="cid" #courseId="ngModel"  required pattern="[0-9][0-9][0-9]">
+            <div *ngIf="courseId.invalid">
+                <span style="color: red;" *ngIf="courseId.errors?.['required']">
+                   
+                   Course Id is required Field 
+               </span> 
+               <span style="color: red;" *ngIf="courseId.errors?.['pattern']">
+                   Course Id is not valid
+               </span>
+             </div>
+
+
+             
+        </div>
+
+
+        <div class="form-group">
+            <label >Course Name</label>
+            <input type="text" #courseName="ngModel"  pattern="[a-zA-Z]+"    [(ngModel)]="c.courseName" class="form-control" id="cname" name="cname" placeholder="exp {like Java, English }" required>
+            <div *ngIf="courseName.invalid">
+                <span style="color: red;" *ngIf="courseName.errors?.['required']">
+                   
+                   Course Name is required Field 
+               </span> 
+               <span style="color: red;" *ngIf="courseName.errors?.['pattern']">
+                   Course Name is not valid
+               </span>
+             </div>
+        </div>          
+        
+        <div class="form-group">
+            <label>Duration</label>
+            <input type="text"  [(ngModel)]="c.duration" class="form-control" id="cduration"  name="cduration" placeholder="In Days">
+        </div>
+        <div class="form-group">
+            
+                <label class="mr-sm-2">Course Category</label>
+                <select   [(ngModel)]="c.category"  class="form-control form-control-lg" id="cCategory" name="cCategory">
+                  <option selected>Choose...</option>
+                  <option value="Programming">Programming</option>
+                  <option value="AI">AI</option>
+                  <option value="AI">AI</option>
+                  <option value="Communication">Communication</option>
+                </select>
+          
+        </div> 
+        
+        <div class="form-group">
+            <label>Course Owner</label>
+            <input type="text"  [(ngModel)]="c.courseOwner"    class="form-control" id="cOwner"  name="cOwner" value="Mahesh Kumar">
+        </div>
+        
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number"  [(ngModel)]="c.price"  class="form-control" id="cprice"  name="cprice" placeholder="In USD $">
+        </div>  
+        <div class="form-group">
+            <label>Discount</label>
+            <input type="number"  [(ngModel)]="c.discount" class="form-control" id="cdiscount"  name="cdiscount" placeholder="In %">
+        </div>
+
+        <div class="form-group">
+            <label>About Course</label>
+            <textarea   [(ngModel)]="c.about"   class="form-control" id="aboutCourse" name="aboutCourse" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input  [(ngModel)]="c.imageName"   type="text" class="form-control" id="image"  name="image" placeholder="with extention exp *.JPG">
+        </div>
+        
+        <button type="submit" class="btn btn-primary mb-2" [disabled]="courseForm.form.invalid"  >Add Course</button>
+    </form>
+    
+</div>
+
+
+

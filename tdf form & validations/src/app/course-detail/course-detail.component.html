@@ -1,0 +1,28 @@
+<img src="/assets/images/{{c.imageName}}" alt="Java course image" width="250px" height="250px">
+<h2 style="color: brown; font-style: italic;">{{c.courseName}} </h2>
+<table>
+    <tr>
+        
+        <td> 
+            
+            <p> {{c.about}} </p>
+            <hr/>
+            <span>Course Price <span>{{c.price|currency}}    </span>  
+                <i *ngIf="c.discount>0"> 
+                    with {{c.discount}}% Off 
+                    <span *ngIf="c.discount>9">
+                        <b style="color: blue; font-family: Georgia, 'Times New Roman', Times, serif;"><u> Recommended</u></b>
+                    </span>
+                </i> 
+        
+            </span> 
+            <br/>
+            Course Duration {{c.duration}} Days , @ 8 hrs in a Day
+           
+            
+        </td>
+        
+    </tr>
+</table>
+
+

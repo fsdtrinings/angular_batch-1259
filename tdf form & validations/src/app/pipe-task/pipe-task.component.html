@@ -1,0 +1,23 @@
+<div style="margin-left: 5%;">
+    Date :- {{todayDate }} <br/>
+    Date :- {{todayDate | date}} <br/>
+    Date US Date :- {{todayDate | date:'short'}} <br/>
+    Date :- {{todayDate | date:'h:mm a z'}} <br/>
+    
+</div>
+<div style="margin-top: 10px;margin-left: 5%;">
+    {{someText}} <br/>
+    {{someText | uppercase}} <br/>
+    {{someText | titlecase}} <br/>
+</div>
+
+<div style="margin-top: 10px;margin-left: 5%;">
+    {{amount}} <br/>
+   USD {{amount | currency}} <br/>
+   INR {{amount*82.5 | currency:'INR'}} <br/>
+   Euro {{amount/0.93 | currency:'EUR'}} <br/>
+   {{discount|percent:'3.3'}} <br/>
+    Debit Card {{debitCardNumber|mydebit}}
+</div>
+
+
