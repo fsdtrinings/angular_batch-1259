@@ -1,0 +1,8 @@
+
+     
+      // ----------- Step 1 Save Record code -----------------------
+      let todayDate:Date = new Date();
+      
+      // below date is formated in 2023 Feb 22 11:58
+      let stringDate:string = todayDate.getFullYear()+''+todayDate.getMonth()+''+todayDate.getDay()+''+todayDate.getHours();
+      
