@@ -1,0 +1,54 @@
+HTML code 
+<hr/>
+ Booking Info <input type="text" value= "{{1}}" #flightId readonly="true"/>
+ <button (click)="addReview(flightId.value)"> review</button>
+ <br/>
+ <div *ngIf="showReviewPanel == true">
+        Add Review for Flight {{reviewFlightId}} {{reviewFlightName}}<br/>
+        Star 
+        <table>
+            <tr>
+                <td> <input type="radio" name="reviewPoints" value="0"/>0  </td>
+                <td> <input type="radio" name="reviewPoints" value="1"/>1  </td>
+                <td> <input type="radio" name="reviewPoints" value="2"/>2  </td>
+                <td> <input type="radio" name="reviewPoints" value="3"/>3  </td>
+                <td> <input type="radio" name="reviewPoints" value="4"/>4  </td>
+                <td> <input type="radio" name="reviewPoints" value="5"/>5  </td>
+                
+                
+            </tr>
+            <input type="text"/>
+            <button> Add Review</button>
+            <button (click)="closePanel()"> Add Review</button>
+            
+        </table>
+
+ </div>
+ 
+ 
+ ==========================================================================================================
+ ts file code 
+ 
+ export class Page2Component {
+
+  name:string=''
+  showReviewPanel = false;
+  reviewFlightId=0;
+  reviewFlightName='';
+  constructor(private activatedRouter:ActivatedRoute,
+        private router:Router) { 
+          this.name = this.activatedRouter.snapshot.params['name'];
+        }
+
+
+        addReview(flightId:string)
+        {
+          this.reviewFlightId = parseInt(flightId);
+          this.reviewFlightName = "Indigo"; // get it from DB or localStorage
+          this.showReviewPanel = true;
+        }
+        closePanel()
+        {
+          this.showReviewPanel = false;
+        }
+}
